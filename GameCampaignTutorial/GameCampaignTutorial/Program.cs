@@ -34,7 +34,7 @@ namespace GameCampaignTutorial
                 Gamer = randomGamer,
                 IsDeleted = false,
                 PurchaseDate = DateTime.Now
-            });
+            }).Wait();
 
             ListOrders();
 
@@ -65,7 +65,7 @@ namespace GameCampaignTutorial
                     Description = $"Campaign {i}",
                     Discount = (double)i / 10,
                     IsDeleted = false
-                });
+                }).Wait();
             }
         }
 
@@ -84,7 +84,7 @@ namespace GameCampaignTutorial
                     Rating = i % 5 + 1,
                     ReleaseDate = DateTime.Now.AddMonths(i),
                     CampaignId = campaigns.ElementAt(_random.Next(campaigns.Count() - 1)).Id
-                });
+                }).Wait();
             }
         }
 
